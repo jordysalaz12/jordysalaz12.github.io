@@ -52,3 +52,13 @@ cursor: pointer;
 button:hover{
     background-color:#05455a ;
 }
+
+@media screen and (max-width: 767px){
+    #color{
+        font-size: 16px;
+        font-weight: bold;
+    }
+    button{
+        font-size: 15px
+    }
+}
