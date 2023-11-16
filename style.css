@@ -50,7 +50,7 @@ grid-area: pie;
 header img{
     min-height: 100%;
     width:100%;
-    min-width: 1650px;
+    object-fit: cover;
     transition: all 0.3s ease;
     
 }
@@ -63,6 +63,7 @@ header .titulo{
     height: 25rem;
     top: 40%;
     left: 30%;
+    
     
     
 }
@@ -306,6 +307,9 @@ span.resaltado {
         
     }
     .pie{
-        min-width: 390px; ;
+        min-width: 390px; 
+    }
+    header .titulo{
+        left: 20px;
     }
   }
