@@ -1,67 +1,243 @@
-/* Estilos generales */
-*{
-    margin:0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-
-
 body{
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    min-width: 100vw;
     height: 100vh;
-    background-color: #2b807b;
-    text-align: center;
-}
-.centrar-flex{
- display: flex;
- justify-content: center;
- align-items: center;
 }
 
-
-/* contenedor */
-
-#container{
-    height: 300px;
-    width: 600px;
-    background-color: white;
-    border: 5px solid black;
-    flex-wrap:wrap ;
-    flex-direction: column;
+.container{
+    min-height: 100vh;
+    min-width: 100vw;
+    display: grid;
+    position: relative;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: 50rem 6rem 40rem 15rem;
+    grid-template-areas:
+                          "cabecera cabecera cabecera"
+                          "nav nav nav"
+                          "main main main" 
+                        "pie pie pie "                         ;
+    
+    
 }
-#color{
-    font-size: 30px;
-    font-weight: bold;
+
+
+
+.cabecera{
+   
+    grid-area: cabecera;
+    position: relative;
+}
+.navbar{
+    grid-area: nav;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    height: 6rem;
+}
+.main{
+    grid-area:main;  
 }
 
-/* boton */
 
-button{
-    font-size: 30px;
+.pie{
+background-color: greenyellow;
+grid-area: pie;
+}
+
+.header{
+    position: relative;
+}
+header img{
+    min-height: 100%;
+    width:100%;
+    min-width: 1650px;
+    transition: all 0.3s ease;
+    
+}
+header .titulo{ 
     color: white;
-    border-radius: 20px;
-background-color: #008cba;
-margin :15px;
-padding: 10px 30px;
-border: 3px solid #008cba;
-user-select: none;
-transition-duration: 0.4s;
-cursor: pointer;
+    font-size: 1.6rem;
+    font-family: 'Bebas Neue', sans-serif;
+    position: absolute;
+    width: 25rem;
+    height: 25rem;
+    top: 40%;
+    left: 30%;
+    
+    
 }
-button:hover{
-    background-color:#05455a ;
+header .titulo h1{
+    color: whitesmoke;
+    font-size: 4.5rem;
 }
 
-@media screen and (max-width: 767px){
-    #color{
-        font-size: 20px;
-        font-weight: bold;
-    }
-    button{
-        font-size: 15px
-    }
-    #container{
-        height: 200px; 
-    } 
+header .titulo h3{
+    font-size: 1.5rem;
+}
+button{
+    color: white;
+    width:150px ;
+    height: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(228, 69, 96);
+    border:none;
+    border-radius: 8px;
+    transition: transform 0.5s;
+}
+
+button:hover{
+    background-color:rgb(214, 27, 58) ;
+    cursor: pointer;
+}
+button:active {
+    transform: scale(1.1); 
+    border: 1px solid yellow;
+}
+button p{
+    font-size: 0.9rem;
+    
+}
+
+button img{
+    height: 22px;
+    width: 20px;
+    min-width: 10px;
+}
+
+
+/*EMPEZAMOS A HACE REL NAVBAR*/
+.navbar .caja1 a{
+    text-decoration: none;
+    
+    font-weight: 600;
+    padding: 0 20px;
+    color: rgb(53, 50, 50);
+}
+.navbar .caja1 a:hover{
+    color:  rgb(228, 69, 96);
+}
+.navbar .caja1{
+    height: 6rem;
+    width: auto;
+    display: flex;
+    align-items: center;
+}
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem;
+    position: sticky;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    width: 100%;
+    z-index: 9999;
+}
+
+
+
+.middle img{
+    height: 12rem;
+    width: 12rem;
+    border-radius: 50%;
+    border: 5px solid #ffffff;
+    transition: opacity 0.5s ease;
+}
+
+
+/*MAIN content*/
+
+
+
+.container-medio{
+    display: grid;
+    width: 100%;
+    grid-template-columns:repeat(3,1fr);
+    font-family: 'Bebas Neue', sans-serif;
+}
+.mainContent{
+ height: 40rem;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ border: 0.1px groove rgb(224, 224, 224);
+}
+.greyLetra{
+color: rgb(78, 75, 75);
+text-transform: lowercase;
+}
+.mainContent *{
+    margin: 10px auto;
+    width: 80%;
+}
+
+
+.botonDescarga{
+    color: red;
+    background-color: white; 
+    border: 1px solid red;
+    height: 3rem;
+    width: 10rem;
+    font-size: 1rem;
+    
+}
+.botonDescarga:hover{
+    background-color: rgb(212, 63, 63);
+    color: white;
+}
+
+.redesSociales{
+    display: flex;
+    align-content: space-between;
+    width: 20%;
+    
+}
+
+
+    
+
+span.resaltado {
+    border-bottom: 2px solid red; /* Puedes ajustar el grosor y el color según tus preferencias */
+  }
+
+
+.secPage{
+    display: flex;
+    flex-direction: row;
+    
+    justify-content: center;
+    align-items: center;
+  }
+
+  .seccion-resumen{
+    width: 50%;
+    height:40rem;
+   padding:70px;
+   line-height: 30px;
+   border:0.1px groove rgb(224, 224, 224); 
+   font-family: 'Bebas Neue', sans-serif;
+  }
+
+
+.pie {
+    background-color: #242222;
+    padding: 20px 0;
+    text-align: center;
+    color: #a0a0a0;
+    font-family: 'Bebas Neue', sans-serif;
+    line-height: 40px;
+}
+
+
+
+.pie a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.pie a:hover {
+    text-decoration: underline;
 }
